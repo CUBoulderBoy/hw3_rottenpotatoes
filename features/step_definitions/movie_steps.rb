@@ -21,7 +21,7 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   ratings = rating_list.split(", ")
   ratings.each do |rating|
     rating = "ratings_" + rating
-    if uncheck == "uncheck"
+    if uncheck
       uncheck(rating)
     else
       check(rating)

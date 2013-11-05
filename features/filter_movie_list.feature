@@ -25,8 +25,10 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   When I check the following ratings: PG, R
   When I uncheck the following ratings: G, PG-13, NC-17
   When I press "ratings_submit"
-  Then I should see /(\sPG\s|\sR\s).*\d\d$/
-  And I should not see /(\sG\s|\sPG\-13\s|\sNC\-17\s)$/
+  Then I should see "When Harry Met Sally"
+  And I should see "The Incredibles"
+  And I should not see "The Help"
+  And I should not see "Chicken Run"
 
 Scenario: no ratings selected
   # see assignment
